@@ -90,25 +90,9 @@ async function onCommand(name, currentTab) {
       })
       break;
 
-    case "CTRL_1":
-    case "CTRL_2":
-    case "CTRL_3":
-    case "CTRL_4":
-    case "CTRL_5":
-    case "CTRL_6":
-    case "CTRL_7":
-    case "CTRL_8":
-      let num = Number(name.split("_")[1]);
-      let specifiedTab = recentTabs[num - 1];
-      if (!specifiedTab) return;
 
-      chrome.tabs.update(specifiedTab.id, { active: true });
-      break;
-
-    case "CTRL_9":
-      let lastTab = recentTabs[recentTabs.length - 1];
-      chrome.tabs.update(lastTab.id, { active: true });
-      break;
+    // fucking useless anyway, who the hell is numbering their tabs?
+      
   }
 }
 
